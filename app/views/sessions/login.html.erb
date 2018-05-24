@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="assets/stylesheet/styles.css">
+    </head>
+    <body>
+        <h1>EL BARO</h1>
+
+        <div class="section">
+
+         <!-- <img id="li_avatar" src="images/user.png" alt="Avatar"> -->
+         <%= image_tag("user.png", :alt =>"Avatar" , id:"li_avatar") %>
+         <!--
+         <form id="forma" action="registro.html" method="get">
+            <input id="usuario" class="input" type="text" name="usuario" placeholder="Usuario" onclick="remove_class()"><br>
+            <a id="falta_nombre" class="missing_info_alert">Nombre de usuario requerido</a>
+            <br>
+            <input id="contrasena" class="input" type="password" name="contrasena" placeholder="Contraseña" onclick="remove_class()">
+            <br>
+            <a id="falta_contraseña" class="missing_info_alert">Contraseña necesaria</a>
+            <input class="entrar" type="button" onclick="validar()" name="entrar" value="Iniciar sesión" >
+            <p>-</p>
+            <input class="registrar" type="submit" name="registrar" value="Registrate!" >
+         </form>
+         !-->
+         <%= form_tag("/entrar", method: "get",id:'forma') do %>
+           <%= text_field_tag :usuario,nil,placeholder:'Usuario',class: 'input',onclick:'remove_class()' %>
+           <a id="falta_nombre" class="missing_info_alert" >Nombre de usuario requerido</a>
+           <%= text_field_tag :contrasena,nil,placeholder:'Contraseña',class: 'input',type:'password', onclick:'remove_class()'%>
+           <a id="falta_contraseña" class="missing_info_alert">Contraseña necesaria</a>
+
+           <%= button_tag "Iniciar sesión",type:'button', class:'entrar',onclick: "validar();"%>
+           <%= button_tag(:type => 'button',class:'registrar') do %>
+              <% link_to ('Registrate!'), registrar_path %>
+           <% end %>
+         <% end %>
+
+
+
+
+        </div>
+
+
+
+        <!-- SCRIPTS -->
+        <script src="assets/javascripts/login.js"></script>
+        <script type="text/javascript" src="assets/js/jquery.js"></script>
+
+    </body>
+</html>

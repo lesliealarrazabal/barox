@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="styles.css">
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    </head>
+    <body>
+        <h1 id="registro">Registrate</h1>
+
+
+        <div class="registersection">
+          <%= form_tag("/", method: "get",id:'forma2') do %>
+
+            <p class='parrafos'>Nombre:</p><br>
+            <%= text_field_tag :nom,nil,placeholder:'Nombre',class: 'el',id:'nom'%><br><br>
+            <p class='parrafos' >No.Control:</p><br>
+            <%= text_field_tag :num,nil,placeholder:'Ejemplo: 14623009 ',class: 'el',id:'num'%><br><br>
+            <p class='parrafos' id='car_lbl'>Carrera:</p>
+            <%= text_field_tag :nom,nil,placeholder:'Carrera',class: 'el',id:'car'%>
+            <p class='parrafos'>Semestre:</p><br>
+            <%= text_field_tag :nom,nil,placeholder:'Semestre',class: 'el',id:'sem'%><br><br>
+
+
+
+            <p class='parrafos'>Usuario:</p><br>
+            <%= text_field_tag :nom,nil,placeholder:'Usuario',class: 'el', id:'usu'%><br><br>
+            <p class='parrafos'>Contraseña:</p><br>
+            <%= text_field_tag :nom,nil,placeholder:'Contraseña',class: 'el',id:'pas'%>
+            <%= text_field_tag :nom,nil,placeholder:'Confirmar contraseña',class: 'el',id:'pasc'%><br><br>
+            <a class='parrafos'>*La contraseña debe ser de minimo <strong>8 digitos</strong> y debe contener un <strong>digito</strong> y una letra <strong>mayuscula</strong></a><br>
+            <%= button_tag "Registrate !",type:'button', class:'registrar',id:'submit_btn',onclick:"vregistro();"%>
+
+          <% end %>
+
+
+          <!-- <form class="forma2">
+             No.Control:
+            <input class="el" id="a3" type="text" name="nocontrol"  placeholder="No.control">
+            <br>
+            Nombre:
+            <input class="el" id="a1" type="text" name="nombre" placeholder="Nombre">
+            <br>
+            Usuario:
+            <input class="el" id="a2" type="text" name="user" placeholder="Usuario">
+            <br>
+            Contraseña:
+            <input class="el" type="password" name="cont" placeholder="Contraseña">
+            <br>
+            Carrera:
+            <input class="el" id="a4" type="text" name="carrera" placeholder="Carrera">
+            <br>
+            Semestre:
+            <input class="el" id="a5" type="text" name="semestre" placeholder="Semestre">
+            <br>
+            <input class="registrar_submit_button" type="submit" name="r" value="Registrarse" onclick="registrarse()">
+
+         </form> -->
+
+        </div>
+
+
+        <!-- SCRIPTS -->
+        <script src="reg.js"></script>
+
+
+    </body>
+</html>
