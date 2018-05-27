@@ -6,5 +6,7 @@ end
 def registrar
 end
 
+def index
+end
 
 end
