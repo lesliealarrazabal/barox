@@ -11,7 +11,7 @@
     src:url(font-path('Bourbon.otf'));
 }
 
-body {
+body.imagendefondo {
      background-image: image-url('back.jpg');
      background-size: 1390px;
      background-position-y:-220px;
@@ -81,7 +81,7 @@ a:-webkit-any-link {
 .entrar{
 
     height: 40px;
-    margin-left: 1%;
+    margin-left: 3%;
     padding:3px 10px;
     background:#556080;
     border:0 none;
@@ -197,7 +197,7 @@ form{
     background-position-x: 5px;
     background-position-y: center;
     padding-left:44px;
-    margin-bottom: 2%;
+    margin-bottom: 1%;
 
 
 }
@@ -254,6 +254,13 @@ font-weight: bold;
 
 }
 
+
+input{
+  border: solid 1px #BEBFC1;
+  border-radius: 0.375em;
+  font-size: 10pt;
+  font-family: "Open Sans", sans-serif;
+}
 
 
 input.entrar:hover{
