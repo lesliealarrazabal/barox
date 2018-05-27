@@ -6,7 +6,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     </head>
-    <body>
+    <body class="imagendefondo">
         <h1 id="registro">Registrate</h1>
 
 
@@ -27,8 +27,8 @@
             <p class='parrafos'>Usuario:</p><br>
             <%= text_field_tag :nom,nil,placeholder:'Usuario',class: 'el', id:'usu'%><br><br>
             <p class='parrafos'>Contraseña:</p><br>
-            <%= text_field_tag :nom,nil,placeholder:'Contraseña',class: 'el',id:'pas'%>
-            <%= text_field_tag :nom,nil,placeholder:'Confirmar contraseña',class: 'el',id:'pasc'%><br><br>
+            <%= text_field_tag :nom,nil,placeholder:'Contraseña',class: 'el input',type:'password',id:'pas',onclick:"remove_class_reg();"%>
+            <%= text_field_tag :nom,nil,placeholder:'Confirmar contraseña',class: 'el input',type:'password',id:'pasc',onclick:"remove_class_reg();"%><br><br>
             <a class='parrafos'>*La contraseña debe ser de minimo <strong>8 digitos</strong> y debe contener un <strong>digito</strong> y una letra <strong>mayuscula</strong></a><br>
             <%= button_tag "Registrate !",type:'button', class:'registrar',id:'submit_btn',onclick:"vregistro();"%>
 

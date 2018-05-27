@@ -1,4 +1,3 @@
-
 function vregistro(){
 
     num = document.getElementById("num").value;
@@ -9,6 +8,13 @@ function vregistro(){
     car = document.getElementById("car").value;
     sem = document.getElementById("sem").value;
 
+
+    if( pas.length <8 || pas != pasc || !pas.match(/[a-zA-Z0-9][a-zA-Z0-9]+/)){
+        $(".input").addClass("error");
+        console.log("si entra");
+    }
+    else {
+     $(".input").removeClass("error");
     if(num == "" || nom == "" || usu == "" || pas == ""|| car == "" || sem== "" || pasc == ""){
         swal("Campos faltantes", "Por favor, introduzca la informacion en todos campos", "warning");
     }
@@ -16,6 +22,12 @@ function vregistro(){
       swal("Registro exitoso!", "Inicia sesión con tu usuario y conntraseña creados!", "success");
     }
 
+    }
 
 
+}
+
+
+function remove_class_reg(){
+    $(".input").removeClass("error");
 }
