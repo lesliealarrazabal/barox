@@ -7,7 +7,6 @@ end
 
 #To style the charts
 gem 'morrisjs-rails'
-
 gem 'raphael-rails'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
