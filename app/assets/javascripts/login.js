@@ -7,8 +7,8 @@ var may=/A-Z/;
 
 function validar(){
 
-    usuario = document.getElementById("usuario").value;
-    contraseña = document.getElementById("contrasena").value;
+    usuario = document.getElementById("usuariolog").value;
+    contraseña = document.getElementById("contrasenalog").value;
     msj_campo1= document.getElementById("falta_nombre");
     msj_campo2= document.getElementById("falta_contraseña");
 
@@ -19,13 +19,13 @@ function validar(){
         msj_campo2.style.visibility = 'visible';
     }
     else if(usuario =="" && contraseña != ""){
-      $(".input#usuario").addClass("error");
+      $(".input#usuariolog").addClass("error");
       msj_campo1.style.visibility = 'visible';
       msj_campo2.style.visibility = 'hidden';
 
     }
     else if(usuario !="" && contraseña == ""){
-      $(".input#contrasena").addClass("error");
+      $(".input#contrasenalog").addClass("error");
       msj_campo1.style.visibility = 'hidden';
       msj_campo2.style.visibility = 'visible';
 

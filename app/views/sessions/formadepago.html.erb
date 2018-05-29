@@ -22,7 +22,7 @@
     <div id="sidebar-wrapper">
       <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
       <ul class="sidebar-nav">
-        <li><a>Mi cartera</a></li>
+        <li><%= link_to "Mi cartera", index_path %></li>
         <li><a>Servicios</a></li>
         <li><%= link_to "Forma de pago", formadepago_path %></li>
         <li><a>Compras</a></li>
@@ -37,38 +37,27 @@
         <div class="row">
           <div class="col-lg-12">
             <%= image_tag("menu.png", :alt =>"menu" , id:"m",onclick: "togg();") %>
-
-             <!--Grafica de lineas-->
-                <div class="container">
-                  <h3 class="titulo"><strong>Mi</strong> cartera</h3>
-                  <hr class="title-hr">
-                  <div class="row">
-                    <div class="col-md-8" >
-                      <h3 class="subtitulo">Estadisticas</h3><hr>
-                      <div class="graphs" id="myfirstchart"></div>
-                    </div>
-                    <div class="col-md-4 noticias" >
-                      <div class="info-box" id="entradas">
-                        <h1 class="cant-notic"><strong>5.6</strong><h1><h3 class="lbl-notic">BAROS<h3>
-                        <p class="descripcion-notic">Monto actual</p>
-                      </div>
-                      <div class="info-box" id="salidas">
-                        <h1 class="cant-notic"><strong>3.6</strong><h1><h3 class="lbl-notic">BAROS<h3>
-                        <p class="descripcion-notic">Ultimo retiro</p>
-                      </div>
-                      <div id="donut-example"></div>
-
-
-                    </div>
-                  </div>
-
-
-
-
-
-
+            <div class="col-lg-12">
+              <div class="container">
+                <h3 class="titulo"><strong>Forma</strong> de pago</h3>
+                <hr class="title-hr">
+              </div>
+            </div>
+            <div class="col-lg-8 container x">
+              <%= link_to visaconfig_path  do%>
+                <div class="field">
+                  <%= image_tag("visa.png", :alt =>"visa" ,class:'imagenes', id:"visa")%>
+                  <%= image_tag("next-arrow2.png", :alt =>"next" , id:"mow")%>
                 </div>
+              <% end %>
+              <%= link_to oxxoconfig_path  do%>
+                <div class="field">
+                  <%= image_tag("oxxo.png", :alt =>"oxxo" ,class:'imagenes', id:"oxxo")%>
+                  <%= image_tag("next-arrow2.png", :alt =>"next" , id:"mow")%>
+                </div>
+              <% end %>
 
+            </div>
           </div>
         </div>
       </div>
@@ -84,9 +73,21 @@
    $("#wrapper").toggleClass("menuDisplayed"); }
  </script>
 
+ <script>
+ $(document).ready(function(){
+     $(".field").hover(function(){
+         $(this).css("width", "400px");
+         $(this).css("transition", "0.3s");
+         }, function(){
+         $(this).css("width", "500px");
+     });
+ });
+ </script>
+
+
+
+
  <script src="/morris.min.js"></script>
-
-
 
 
 

@@ -9,4 +9,14 @@ end
 def index
 end
 
+def formadepago
+end
+
+def oxxoconfig
+end
+
+def visaconfig
+end
+
+
 end
