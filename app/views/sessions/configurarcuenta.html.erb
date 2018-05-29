@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>elbaro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link rel="stylesheet" href="sidebar.css">
+
+
+
+</head>
+<body id="background_color">
+  <div id="wrapper">
+
+    <!-- Sidebar-->
+    <div id="sidebar-wrapper">
+      <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
+      <ul class="sidebar-nav">
+        <li><%= link_to "Mi cartera", index_path %></li>
+        <li><a>Servicios</a></li>
+        <li><%= link_to "Forma de pago", formadepago_path %></li>
+        <li><a>Compras</a></li>
+        <li><%= link_to "Configuración de cuenta", configurarcuenta_path %></li>
+        <li><a>Cerrar sesión</a></li>
+      </ul>
+    </div>
+
+    <!-- Page content-->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <%= image_tag("menu.png", :alt =>"menu" , id:"m",onclick: "togg();") %>
+            <div class="col-lg-12">
+              <div class="container">
+                <h3 class="titulo">Configurar <strong> mi cuenta</strong></h3>
+                <hr class="title-hr">
+              </div>
+            </div>
+            <!-- AQUI ESTA EL FORM PARA EDITAR LO DEL USUARIO -->
+            <div class="col-lg-6" style="border: solid 1px #D3D4D8; margin-left:25%; margin-top:2%;">
+              <%= image_tag("user.png", :alt =>"Avatar",style:"margin-left:40%; margin-bottom:20px; margin-top:10px;") %>
+              <%= form_tag("/", method: "get",id:'forma4',class:"uu") do %>
+                <p class='parrafos' >Nombre:</p><br>
+                <%= text_field_tag :nom_modif,nil,placeholder:'Nombre',class: 'el configurar-fields bloquear'%><br>
+                <p class='parrafos' >No.Control:</p><br>
+                <%= text_field_tag :num_modif,nil,placeholder:'Ejemplo: 14623009 ',class: 'el configurar-fields bloquear'%><br>
+                <p class='parrafos' id='car_modif_lbl'>Carrera:</p><br>
+                <%= text_field_tag :carrera_modif,nil,placeholder:'Carrera',class: 'el configurar-fields bloquear'%><br>
+                <p class='parrafos'>Semestre:</p><br>
+                <%= text_field_tag :sem_modif,nil,placeholder:'Semestre',class: 'el configurar-fields bloquear',style:"margin-bottom:20px;"%><br>
+
+                <%= button_tag "Actualizar",type:'button', class:'registrar',id:'actualizar-btn',style:"margin-left:40%; color:white; margin-bottom:40px;",onclick:"normal();"%>
+
+              <% end %>
+            </div>
+            <div class="col-lg-6" style="margin-left:25%;">
+              <%= image_tag("editar.png", :alt =>"editar",id:'editarbutton',style:"margin-top:-3%; margin-left:98%; width:50px; height:50px;",onclick:"enableydisable();") %>
+            </div>
+            <!--FIN DE EDITAR -->
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+
+  <!--Menu toggle script -->
+ <script>
+   function togg(){
+   $("#wrapper").toggleClass("menuDisplayed"); }
+ </script>
+
+ <script>
+ $(document).ready(function(){
+     $(".field").hover(function(){
+         $(this).css("width", "400px");
+         $(this).css("transition", "0.3s");
+         }, function(){
+         $(this).css("width", "500px");
+     });
+ });
+ </script>
+  <script>
+
+
+   function enableydisable(){
+
+     $("input").removeClass("bloquear");
+     document.getElementById("editarbutton").style.visibility="hidden";
+     document.getElementById("actualizar-btn").style.visibility="visible";
+   }
+
+   function normal(){
+    $("input").addClass("bloquear");
+     document.getElementById("actualizar-btn").style.visibility="hidden";
+     document.getElementById("editarbutton").style.visibility="visible";
+   }
+
+  </script>
+
+ <script src="/morris.min.js"></script>
+
+</body>
+</html>

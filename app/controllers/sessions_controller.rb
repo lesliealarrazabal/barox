@@ -18,5 +18,8 @@ end
 def visaconfig
 end
 
+def configurarcuenta
+end
+
 
 end
