@@ -25,9 +25,9 @@
          </form>
          !-->
          <%= form_tag("/entrar", method: "get",id:'forma') do %>
-           <%= text_field_tag :usuario,nil,placeholder:'Usuario',class: 'input',onclick:'remove_class()' %>
+           <%= text_field_tag :usuariolog,nil,placeholder:'Usuario',class: 'input',onclick:'remove_class()' %>
            <a id="falta_nombre" class="missing_info_alert" >Nombre de usuario requerido</a>
-           <%= text_field_tag :contrasena,nil,placeholder:'Contraseña',class: 'input',type:'password', onclick:'remove_class()'%>
+           <%= text_field_tag :contrasenalog,nil,placeholder:'Contraseña',class: 'input',type:'password', onclick:'remove_class()'%>
            <a id="falta_contraseña" class="missing_info_alert">Contraseña necesaria</a>
 
            <%= button_tag "Iniciar sesión",type:'button', class:'entrar',onclick: "validar();"%>

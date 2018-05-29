@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>elbaro</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="css/font-awesome.min.css" rel="stylesheet"/>
+  <link href="style.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body id="background_color">
+  <div id="wrapper">
+
+    <!-- Sidebar-->
+    <div id="sidebar-wrapper">
+      <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
+      <ul class="sidebar-nav">
+        <li><%= link_to "Mi cartera", index_path %></li>
+        <li><a>Servicios</a></li>
+        <li><%= link_to "Forma de pago", formadepago_path %></li>
+        <li><a>Compras</a></li>
+        <li><a>Configuracion de cuenta</a></li>
+        <li><a>Cerrar sesión</a></li>
+      </ul>
+    </div>
+
+    <!-- Page content-->
+    <div id="page-content-wrapper">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-12">
+            <%= image_tag("menu.png", :alt =>"menu" , id:"m",onclick: "togg();") %>
+            <div class="col-lg-12">
+              <div class="container">
+                <h3 class="titulo"><strong>Forma</strong> de pago</h3>
+                <hr class="title-hr">
+              </div>
+            </div>
+            <div class="col-lg-12">
+              <!--AQUI EMPIEZA -->
+
+
+                  <div class="container">
+                      <!-- <form action="save.php" method="post"> -->
+                      <%= form_tag("/", method: "get",id:'forma3') do %>
+                          <div class="wizards">
+                              <div class="progressbar">
+                                  <div class="progress-line" data-now-value="12.11" data-number-of-steps="5" style="width: 12.11%; z-index:-1;"></div> <!-- 19.66% -->
+                              </div>
+                              <div class="form-wizard active">
+                                  <div class="wizard-icon"><i class="fa fa-file-text-o"></i></div>
+                                  <p style="display:block;">Licencia</p>
+                              </div>
+                              <!--
+                              <div class="form-wizard">
+                                  <div class="wizard-icon"><i class="fa fa-user"></i></div>
+                                  <p style="display:block;">About</p>
+                              </div>
+                              -->
+                              <div class="form-wizard">
+                                  <div class="wizard-icon"><i class="fa fa-key"></i></div>
+                                  <p  style="display:block;">Cuenta</p>
+                              </div>
+                              <div class="form-wizard">
+                                  <div class="wizard-icon"><i class="fa fa-check-circle"></i></div>
+                                  <p style="display:block;">Finalizar</p>
+                              </div>
+                          </div>
+                          <fieldset>
+                            <div class="col-lg-12" style="margin-left:auto; margin-right: auto; margin-top:30px; margin-bottom:30px;">
+                              <h5>TERMINOS Y CONDICIONES CONTRACTUALES DEL SERVICIO</h5><br>
+                              <h6>1. DESCRIPCIÓN GENERAL</h6><br>
+                                <p style="margin-bottom:5px;">Estas condiciones generales se aplican a toda relación comercial entre el cliente y El baro, salvo acuerdo expreso por escrito.</p><br>
+                                <p>ELBAROINFORME, S.L. es la Sociedad responsable de la web www.elbaro.com, así como su contenido, siendo su actividad principal proporcionar un servicio que permita al Cliente la compra y venta de criptomonedas a través de la plataforma Web o Aplicación de intercambio denominada <strong>El baro </strong>
+                                Las presentes condiciones deberán ser aceptadas por el cliente para poder utilizar los servicios de <strong>El baro </strong>a través de la web www.elbaro.com (en adelante, URL).
+                                En caso de no aceptar estas condiciones en la solicitud de los servicios o en el proceso de registro, no podrá utilizar la plataforma <strong>El baro </strong>.</p><br>
+                                <p>Con la aceptación expresa de las presentes CONDICIONES GENERALES, se entiende que el cliente ha aceptado íntegramente el contrato y que, por tanto, previamente ha leído y entendido todos y cada uno de los términos, obligándose a cumplir todas las especificaciones establecidas en las mismas.</p>
+                            </div>
+                              <!-- <iframe src="stylesheet/license.txt"></iframe> -->
+                              <label class="form-check-label" style="margin-left:30px;">
+                                  <input class="form-check-input" type="checkbox" value="yes"> He leído y acepto los términos y condiciones.
+                              </label>
+                              <div class="wizard-buttons">
+                                  <button type="button" class="btn btn-next">Siguiente</button>
+                              </div>
+                          </fieldset>
+                          <fieldset>
+                              <h4>Información de la cuenta</h4>
+                              <div class="form-group">
+                                  <label style="margin-top:20px;">Nombre del tarjetahabiente</label>
+                                  <%= text_field_tag :nombre,nil,placeholder:'Nombre',class: 'form-control',type:'text'%>
+                                  <!--<input type="text" name="nombre" class="form-control" placeholder="Nombre"/> -->
+                              </div>
+                              <div class="form-group">
+                                  <label>Número de tarjeta</label>
+                                  <%=text_field_tag :numerodetarjeta,nil,placeholder:'Número de tarjeta',class:'form-control',type:'text' %>
+                                  <!--<input type="text" name="numerodetarjeta" class="form-control" placeholder="Número de tarjeta"/>-->
+                              </div>
+                              <div class="form-group">
+                                  <label>Fecha de expiración</label>
+                                  <%=text_field_tag :fechadeexpiracion,nil,placeholder:'Número de tarjeta',class:'form-control',type:'date' %>
+                                  <!--<input type="date" name="fechadeexpiracion"  novalidate class="form-control" /> -->
+                              </div>
+                              <div class="form-group">
+                                  <label>CVC</label>
+                                  <%=text_field_tag :CVC,nil,placeholder:'CVC',class:'form-control',type:'text' %>
+                                  <!--<input type="text" name="CVC" class="form-control" placeholder="CVC"/>-->
+                              </div>
+                              <div class="form-group">
+                                  <label>Tipo de tarjeta</label>
+                                  <%=text_field_tag :tipodetarjeta,nil,placeholder:'Ejemplo: crédito / débito',class:'form-control',type:'text' %>
+                                  <!--<input type="text" name="tipodetarjeta" class="form-control" placeholder="Ejemplo: crédito / débito"/>-->
+                              </div>
+                              <div class="wizard-buttons">
+                                  <button type="button" class="btn btn-previous" style="color: #797A7A">Anterior</button>
+                                  <button type="button" class="btn btn-next">Siguiente</button>
+                              </div>
+                          </fieldset>
+                          <fieldset>
+                              <div class="jumbotron text-center">
+                              <h2 id="submit-msj2">  ¡Felicidades has terminado el registro! </h2>
+                              <h3 id="submit-msj"> Favor de presionar el boton enviar para guardar la información.</h3>
+                              </div>
+                              <div class="wizard-buttons">
+                                  <button type="button" class="btn btn-previous" style="color: #797A7A">Anterior</button>
+                                  <button type="submit" name="save" class="btn btn-primary btn-submit">Enviar</button>
+                              </div>
+                          </fieldset>
+                      <% end %>  <!-- CERRANDO EL FORM-->
+                  </div>
+
+              <!--AQUI TERMINA -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+
+
+  <!--Menu toggle script -->
+ <script>
+   function togg(){
+   $("#wrapper").toggleClass("menuDisplayed"); }
+ </script>
+
+ <script>
+ $(document).ready(function(){
+     $(".field").hover(function(){
+         $(this).css("width", "400px");
+         $(this).css("transition", "0.3s");
+         }, function(){
+         $(this).css("width", "500px");
+     });
+ });
+ </script>
+
+ <script src="js/jquery.min.js"></script>
+ <script src="js/popper.min.js"></script>
+ <script src="js/bootstrap.min.js"></script>
+ <script src="script.js"></script>
+
+
+</body>
+</html>

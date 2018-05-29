@@ -19,7 +19,7 @@ function vregistro(){
         swal("Campos faltantes", "Por favor, introduzca la informacion en todos campos", "warning");
     }
     else if(num != "" && nom != "" && usu != "" && pas != ""&& car != "" && sem != "" && pasc != "") {
-      swal("Registro exitoso!", "Inicia sesión con tu usuario y conntraseña creados!", "success");
+      swal("Registro exitoso!", "Inicia sesión con tu usuario y contraseña creados!", "success");
     }
 
     }
