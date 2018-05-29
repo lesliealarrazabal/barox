@@ -44,12 +44,12 @@
               </div>
             </div>
             <div class="col-lg-8 container x">
-              <%= link_to visaconfig_path  do%>
-                <div class="field">
+            <!--  <%= link_to visaconfig_path  do%> -->
+                <div class="field" id="fisica" onclick="fisica();">
                   <%= image_tag("visa.png", :alt =>"visa" ,class:'imagenes', id:"visa")%>
                   <%= image_tag("next-arrow2.png", :alt =>"next" , id:"mow")%>
                 </div>
-              <% end %>
+              <!--<% end %>-->
               <%= link_to oxxoconfig_path  do%>
                 <div class="field">
                   <%= image_tag("oxxo.png", :alt =>"oxxo" ,class:'imagenes', id:"oxxo")%>
@@ -82,6 +82,17 @@
          $(this).css("width", "500px");
      });
  });
+ </script>
+
+
+
+ <script>
+function fisica(){
+ var newtab;
+ newtab= window.location.replace("/visaconfig");
+ newtab.document.location.reload(true);
+
+}
  </script>
 
 

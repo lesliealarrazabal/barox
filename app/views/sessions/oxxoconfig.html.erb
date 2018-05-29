@@ -1,104 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>elbaro</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
-  <link rel="stylesheet" href="sidebar.css">
+  <head>
+    <title>elbaro</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <link rel="stylesheet" href="sidebar.css">
 
+  </head>
+  <body id="background_color">
+    <div id="wrapper">
 
+      <!-- Sidebar-->
+      <div id="sidebar-wrapper">
+        <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
+        <ul class="sidebar-nav">
+          <li><%= link_to "Mi cartera", index_path %></li>
+          <li><a>Servicios</a></li>
+          <li><%= link_to "Forma de pago", formadepago_path %></li>
+          <li><a>Compras</a></li>
+          <li><%= link_to "Configuración de cuenta", configurarcuenta_path %></li>
+          <li><a>Cerrar sesión</a></li>
+        </ul>
+      </div>
 
-</head>
-<body id="background_color">
-  <div id="wrapper">
+      <!-- Page content-->
+      <div id="page-content-wrapper">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-lg-12">
+              <%= image_tag("menu.png", :alt =>"menu" , id:"m",onclick: "togg();") %>
 
-    <!-- Sidebar-->
-    <div id="sidebar-wrapper">
-      <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
-      <ul class="sidebar-nav">
-        <li><%= link_to "Mi cartera", index_path %></li>
-        <li><a>Servicios</a></li>
-        <li><%= link_to "Forma de pago", formadepago_path %></li>
-        <li><a>Compras</a></li>
-        <li><%= link_to "Configuración de cuenta", configurarcuenta_path %></li>
-        <li><a>Cerrar sesión</a></li>
-      </ul>
-    </div>
+               <!--Grafica de lineas-->
+                  <div class="container">
+                    <h3 class="titulo">Forma de pago <strong>OXXO</strong></h3>
+                    <hr class="title-hr">
+                    <div class="row">
+                      <div class="col-md-12" >
+                        <div id="inner-oxxo-form">
+                            <%= image_tag("oxxo.png", :alt =>"oxxo", id:"inner-oxxo-image") %>
+                        </div>
+                        <div id="oxxo-form">
+                          <div id="paso2"style="height:450px;">
+                            <h3 id="inner-oxxo-lbl">Referencia:</h3>
+                            <div id="area-1">
+                              <h3 id="inner-oxxo-p">9334-5678-9012-34</h3>
+                            </div>
 
-    <!-- Page content-->
-    <div id="page-content-wrapper">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-lg-12">
-            <%= image_tag("menu.png", :alt =>"menu" , id:"m",onclick: "togg();") %>
-
-             <!--Grafica de lineas-->
-                <div class="container">
-                  <h3 class="titulo">Forma de pago <strong>OXXO</strong></h3>
-                  <hr class="title-hr">
-                  <div class="row">
-                    <div class="col-md-12" >
-                    <div id="inner-oxxo-form">
-                        <%= image_tag("oxxo.png", :alt =>"oxxo", id:"inner-oxxo-image") %>
-                    </div>
-                    <div id="oxxo-form">
-                      <h3 id="inner-oxxo-lbl">Referencia:</h3>
-                      <div id="area-1">
-                        <h3 id="inner-oxxo-p">9334-5678-9012-34</h3>
+                            <h6 id="inner-oxxo-instrucc">INSTRUCCIONES</h6>
+                            <div id="area-2">
+                              <p>1.- Acude a la tienda OXXO más cercana.</p><br>
+                              <p>2.- Indica en la caja que quieres realizar un pago <strong>OXXOPay.</strong></p><br>
+                              <p>3.- Dicta al cajero el número de referencia en esta fiha para que tecleé directamente en la pantalla de venta.</p><br>
+                              <p>4.- Realiza el pago correspondiente con dinero en efectivo.</p><br>
+                              <p>5.- Para confirmar tu pago en la plataforma, el cajero te entregará un comprobante impreso.</p><br>
+                              <p><strong>Teclea ese numero de verificacion aqui.</strong></p>
+                            </div>
+                            <div style="margin-top:48px; margin-left:11.5%; ">
+                              <h6 id="inner-oxxo-instrucc" style="display:inline; color:#5FBD5F; font-size:18px;"><strong>Numero de verificación:</strong></h6>
+                              <%= text_field_tag :area3%>
+                              <%= image_tag("enter.png", :alt =>"enter", id:"enter") %>
+                            </div>
+                          </div>
+                          <div id="paso1"> <!-- Inicio de paso 1-->
+                              <h3 class="center-elements-conversion"><strong>Conversión de divisas</strong></h3>
+                              <h4 class="center-elements-conversion">Pesos / Baros</h4><br>
+                              <h6 id="inner-oxxo-paso1">Pesos:</h6>
+                              <%= text_field_tag :money,nil,placeholder:"Cantidad de baros a cambiar",class:"el"%>
+                              <%= image_tag("convert.png", :alt =>"editar",id:'convert_button',onclick:"calcular();") %><br>
+                              <hr>
+                              <p class="barr" id="b">BAROS: </p>
+                              <p class="barr" id="demo"></p>
+                              <br>
+                              <br>
+                              <br>
+                              <button type="button" id="continuarconversion" class="btn btn-primary" style="margin-left:46%; margin-top:3%; visibility:hidden;" onclick="mostrarpaso2();">Continuar</button>
+                              <hr>
+                            </div> <!-- Fin de  paso 1-->
+                        </div> <!-- Fin de oxxo form-->
                       </div>
+                    </div> <!-- Fin de row-->
 
-                      <h6 id="inner-oxxo-instrucc">INSTRUCCIONES</h6>
-                      <div id="area-2">
-                        <p>1.- Acude a la tienda OXXO más cercana.</p><br>
-                        <p>2.- Indica en la caja que quieres realizar un pago <strong>OXXOPay.</strong></p><br>
-                        <p>3.- Dicta al cajero el número de referencia en esta fiha para que tecleé directamente en la pantalla de venta.</p><br>
-                        <p>4.- Realiza el pago correspondiente con dinero en efectivo.</p><br>
-                        <p>5.- Para confirmar tu pago en la plataforma, el cajero te entregará un comprobante impreso.</p><br>
-                        <p><strong>Teclea ese numero de verificacion aqui.</strong></p>
-                      </div>
-                      <div style="margin-top:48px; margin-left:11.5%; ">
-                        <h6 id="inner-oxxo-instrucc" style="display:inline; color:#5FBD5F; font-size:18px;"><strong>Numero de verificación:</strong></h6>
-                        <%= text_field_tag :area3,nil %>
-                        <%= image_tag("enter.png", :alt =>"enter", id:"enter") %>
-                      </div>
-
-                    </div>
-
-                    </div>
                   </div>
 
-
-
-
-
-
-                </div>
-
+            </div>
           </div>
         </div>
       </div>
-    </div>
 
     </div>
 
 
+    <!--Menu toggle script -->
+   <script>
+     function togg(){
+     $("#wrapper").toggleClass("menuDisplayed"); };
+   </script>
 
-  <!--Menu toggle script -->
- <script>
-   function togg(){
-   $("#wrapper").toggleClass("menuDisplayed"); }
- </script>
+  <script type="text/javascript" src="javascript/conv.js"></script>
 
- <script src="/morris.min.js"></script>
-
-
-
-
-
-</body>
+  </body>
 </html>

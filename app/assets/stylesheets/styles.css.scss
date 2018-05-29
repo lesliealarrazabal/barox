@@ -381,6 +381,69 @@ height: 25px;
 margin-left: 2%
 }
 
+
+.center-elements-conversion{
+  text-align: center;
+}
+#paso2{
+  visibility: hidden;
+}
+
+#paso1{
+background-color: #F8F9FB;
+height:70%;
+width: 63%;
+position:absolute;
+transform:translate(3%,-124%);
+z-index:2;
+}
+#inner-oxxo-paso1{
+margin-left: 28%;
+margin-top: 10%;
+display:inline;
+font-size:18px;
+}
+#convert_button{
+  width: 40px;
+  height: 40px;
+  margin-left: 3%;
+}
+
+
+h3.center-elements-conversion{
+  color:#1D5483;
+}
+
+.barr{
+  display: block;
+  float: right;
+  position: absolute;
+  font-size: 50px;
+  margin-left: 30%;
+}
+
+#b{
+  color: #3F6386;
+}
+#demo{
+ margin-left: 60%;
+}
+
+#paso1_visa{
+background-color: #F8F9FB;
+height:400px;
+width: 63%;
+position: absolute;
+z-index:2;
+transform: translate(30%,20%);
+border: solid #D3D4D8;
+}
+
+#paso2_visa{
+  visibility: hidden;
+}
+
+
 /* STYLING THE CONFIGURAR CUENTA PAGE*/
 .configurar-fields{
 display: inline-block;
