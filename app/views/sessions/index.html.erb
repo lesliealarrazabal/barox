@@ -23,7 +23,7 @@
       <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
       <ul class="sidebar-nav">
         <li><a>Mi cartera</a></li>
-        <li><a>Servicios</a></li>
+        <li><%= link_to "Servicios", servicios_path %></li>
         <li><%= link_to "Forma de pago", formadepago_path %></li>
         <li><a>Compras</a></li>
         <li><%= link_to "Configuración de cuenta", configurarcuenta_path %></li>

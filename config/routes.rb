@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   get 'oxxoconfig', to:'sessions#oxxoconfig'
   get 'visaconfig', to:'sessions#visaconfig'
   get 'configurarcuenta', to:'sessions#configurarcuenta'
+  get 'servicios', to:'sessions#servicios'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
