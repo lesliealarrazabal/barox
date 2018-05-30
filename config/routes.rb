@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   get 'visaconfig', to:'sessions#visaconfig'
   get 'configurarcuenta', to:'sessions#configurarcuenta'
   get 'servicios', to:'sessions#servicios'
+  get 'compraspendientes', to:'sessions#compraspendientes'
+  get 'compraspasadas', to:'sessions#compraspasadas'
+  get 'detalle', to:'sessions#detalle'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

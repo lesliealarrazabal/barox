@@ -202,6 +202,28 @@ position: absolute;
   font-family: 'Raleway', sans-serif;
 }
 
+.sidebar-nav li a#kssy{
+  padding-left: 40px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  display: block;
+  text-decoration: none;
+  color:black;
+  font-family: 'Raleway', sans-serif;
+}
+
+.sidebar-nav li a#kssy2{
+  padding-left: 40px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  display: block;
+  text-decoration: none;
+  color:black;
+  font-family: 'Raleway', sans-serif;
+}
+
+
+
 .sidebar-nav li a:hover{
   background: #BBECF2;
   border-left: 4px solid #00B8CE;

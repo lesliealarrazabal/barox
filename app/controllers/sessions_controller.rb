@@ -25,5 +25,17 @@ end
 def servicios
 end
 
+def compraspendientes
+end
+
+def compraspasadas
+end
+
+
+
+def detalle
+end
+
+
 
 end

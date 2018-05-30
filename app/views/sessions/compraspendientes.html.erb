@@ -16,6 +16,7 @@
 
 </head>
 <body id="background_color">
+
   <div id="wrapper">
 
     <!-- Sidebar-->
@@ -33,6 +34,7 @@
       </ul>
     </div>
 
+
     <!-- Page content-->
     <div id="page-content-wrapper">
       <div class="container-fluid">
@@ -41,26 +43,18 @@
             <%= image_tag("menu.png", :alt =>"menu" , id:"m",onclick: "togg();") %>
             <div class="col-lg-12">
               <div class="container">
-                <h3 class="titulo"><strong>Forma</strong> de pago</h3>
+                <h3 class="titulo">Compras<strong> pendientes</strong></h3>
                 <hr class="title-hr">
               </div>
             </div>
-            <div class="col-lg-8 container x">
-            <!--  <%= link_to visaconfig_path  do%> -->
-                <div class="field" id="fisica" onclick="fisica();">
-                  <%= image_tag("visa.png", :alt =>"visa" ,class:'imagenes', id:"visa")%>
-                  <%= image_tag("next-arrow2.png", :alt =>"next" , id:"mow")%>
-                </div>
-              <!--<% end %>-->
-              <%= link_to oxxoconfig_path  do%>
-                <div class="field">
-                  <%= image_tag("oxxo.png", :alt =>"oxxo" ,class:'imagenes', id:"oxxo")%>
-                  <%= image_tag("next-arrow2.png", :alt =>"next" , id:"mow")%>
-                </div>
-              <% end %>
 
-            </div>
+
           </div>
+
+          <div class='col-lg-10' style='border: solid 1px #DCDCDE; height:600px; border-radius:6px; margin-top:1%; margin-left:8%;'>
+
+          </div>
+
         </div>
       </div>
     </div>
@@ -85,23 +79,29 @@
      });
  });
  </script>
-
-
-
  <script>
-function fisica(){
- var newtab;
- newtab= window.location.replace("/visaconfig");
- newtab.document.location.reload(true);
+  var bandera=0;
+ function mostrarcompras(){
 
-}
- </script>
+   alert(bandera);
 
+   if(bandera == 0){
+     alert('esto entro al 0');
+     document.getElementById("kss").style.visibility="hidden";
+     document.getElementById("kss2").style.visibility="hidden";
 
+   bandera = 1;
+  }
+  else{
+  alert('tambien entro al 1');
 
+  document.getElementById("kss").style.visibility="visible";
+  document.getElementById("kss2").style.visibility="visible";
 
- <script src="/morris.min.js"></script>
-
+   bandera=0;
+ }
+ }
+</script>
 
 
 </body>
