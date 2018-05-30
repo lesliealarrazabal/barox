@@ -22,7 +22,7 @@
       <%= image_tag("logo_large.png", :alt =>"logo" , id:"logo") %>
       <ul class="sidebar-nav">
         <li><%= link_to "Mi cartera", index_path %></li>
-        <li><a>Servicios</a></li>
+        <li><%= link_to "Servicios", servicios_path %></li>
         <li><%= link_to "Forma de pago", formadepago_path %></li>
         <li><a>Compras</a></li>
         <li><%= link_to "Configuración de cuenta", configurarcuenta_path %></li>
@@ -42,14 +42,14 @@
                 <hr class="title-hr">
               </div>
             </div>
-            <div class="col-lg-12" id="paso2_visax">
+            <div class="col-lg-12" id="paso2_visa">
               <!--AQUI EMPIEZA -->
-              <div id="paso2_visa"> <!-- Inicio de paso 2-->
+              <div id="paso2_visax"> <!-- Inicio de paso 2-->
 
                   <div class="container">
                       <!-- <form action="save.php" method="post"> -->
                       <%= form_tag("/", method: "get",id:'forma3') do %>
-                          <div class="wizards">
+                          <div class="wizards" style="margin-top:50px;">
                               <div class="progressbar">
                                   <div class="progress-line" data-now-value="12.11" data-number-of-steps="5" style="width: 12.11%; z-index:-1;"></div> <!-- 19.66% -->
                               </div>
